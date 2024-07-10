@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oi, eu sou o Vini</title>
+    <!--<link rel="stylesheet" href="file:///Users/viniciust/Desktop/Portfolio/styles.css" />-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668dbf5f9706c728e0844426_icon_trevisa.svg">
+
+    <style>
+        /* ### Tokens */
+
+        :root {
+            /* Cores */
+            --font-positive: #000000;
+            --font-negative: #FFFFFF;
+            --light-black: #1E1E1E;
+            --black: #000000;
+            --white: #FFFFFF;
+            --forest-green: #D1D6C7;
+            --forest-green-dark: #8B9073;
+            --orange: #FCCFB7;
+            --orange-dark: #CF7C5A;
+            --purple: #E3DCE9;
+            --purple-dark: #79638D;
+            --red: #FFE0E0;
+            --red-dark: #CD6162;
+            --blue: #D3DEE9;
+            --blue-dark: #4E759D;
+            --dark-grey: #2F3439;
+            --light-grey: #F1F1F1;
+            --heart-red: #E74F3E;
+            --linkedin: #2A67BC;
+            --instagram: #C8407D;
+            /* Shadows elevation */
+            --shadow-elevation-8: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+        }
+
+
+        /* ### Fonts */
+        .body1 {
+            font-family: "Open Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%; /* 24px */
+        }
+
+        .body2 {
+            font-family: "Open Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+        }
+
+        .body2Link {
+            font-family: "Open Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+            color: var(--font-positive) !important;
+        }
+
+        h1 {
+            font-family: "Open Sans";
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%; /* 56px */
+            letter-spacing: -0.2px;
+        }
+
+        h2 {
+            font-family: "Open Sans";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%; /* 28px */
+            letter-spacing: -0.1px;
+        }
+
+        h3 {
+            font-family: "Open Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%; /* 33.6px */
+            letter-spacing: -0.12px;
+        }
+
+        .caption1 {
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%; /* 19.6px */
+            letter-spacing: -0.07px;
+        }
+
+        .positiveFont {
+            color: var(--font-positive);
+        }
+
+        .negativeFont {
+            color: var(--font-negative);
+        }
+
+        p, a, h1, h2, h3, h4 {
+            padding: 0px;
+            margin: 0px;
+        }
+
+
+        /* ### Styles */
+        body {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .titlePage {
+            width: 100%;
+            max-width: 1000px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 0px;
+        }
+
+        header {
+            display: inline-flex;
+            gap: 24px;
+            width: 100%;
+            max-width: 1000px;    
+        }
+
+        .titleContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--light-grey);
+            height: 400px;
+            padding: 40px;
+            border-radius: 24px;
+            gap: 24px;
+        }
+
+        .photoContainer {
+            display: inline-flex;
+            width: 100%;
+            max-width: 364px;
+            align-self: stretch;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            border-radius: 24px;
+            box-sizing: border-box;
+            background: url('https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668e0f40bfc94707f2a34237_foto_vini_2.png') no-repeat bottom;
+            background-size: contain;
+            background-color: var(--forest-green);
+        }
+
+        .contactContainer {
+            display: inline-flex;
+            flex-direction: row;
+            gap: 16px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .primaryButton {
+            display: flex;
+            padding: 12px 24px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border-radius: 800px;
+            background: var(--dark-grey);
+            border: none;
+            box-shadow: none;
+            cursor: pointer;
+        }
+
+        .primaryButton:hover {
+            background: var(--black);
+        }
+
+        .linkedinButton {
+            display: inline-flex;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .linkedinBlack {
+            display: block;
+        }
+
+        .linkedinWhite {
+            display: none;
+        }
+
+        .linkedinButton:hover {
+            background-color: var(--linkedin);
+        }
+
+        .linkedinButton:hover .linkedinBlack{
+            display: none;
+        }
+
+        .linkedinButton:hover .linkedinWhite{
+            display: block;
+        }
+
+        .instagramButton {
+            display: inline-flex;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .instagramBlack {
+            display: block;
+        }
+
+        .instagramWhite {
+            display: none;
+        }
+
+        .instagramButton:hover {
+            background-color: var(--instagram);
+        }
+
+        .instagramButton:hover .instagramBlack{
+            display: none;
+        }
+
+        .instagramButton:hover .instagramWhite{
+            display: block;
+        }
+
+        .casePurple {
+            background-color: var(--purple);
+        }
+
+        .caseRed {
+            background-color: var(--red);
+        }
+
+        .caseBlue {
+            background-color: var(--blue);
+        }
+
+        .caseGreen {
+            background-color: var(--forest-green);
+        }
+
+        .caseOrange {
+            background-color: var(--orange);
+        }
+
+
+        .caseContainer {
+            display: flex;
+            padding: 40px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 1000px;
+            box-sizing: border-box;
+            margin: 24px 0px 0px 0px;
+        }
+
+        .caseTitleContainer {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+            width: 100%;
+        }
+
+        .caseTitleText {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .heart1ButtonLike {
+            display: inline-flex;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .heart1Black {
+            display: block;
+        }
+
+        .heart1White {
+            display: none;
+        }
+
+        .heart1ButtonLike:hover {
+            background-color: var(--heart-red);
+        }
+
+        .heart1ButtonLike:hover .heart1Black{
+            display: none;
+        }
+
+        .heart1ButtonLike:hover .heart1White{
+            display: block;
+        }
+
+        .heart1ButtonDeslike {
+            display: none;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .caseInfos {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+            width: 100%
+        }
+
+        .caseText {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+            width: 100%
+        }
+
+        .tagsContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+            width: 100%
+        }
+
+        .tagsSection {
+            display: flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            gap: 16px;
+            align-self: stretch;
+            flex-wrap: wrap;
+            width: 100%
+        }
+
+        .caseImage {
+            display: flex;
+            width: 100%;
+            max-width: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tagPurple {
+            background-color: var(--purple-dark);
+        }
+
+        .tagRed {
+            background-color: var(--red-dark);
+        }
+
+        .tagBlue {
+            background-color: var(--blue-dark);
+        }
+
+        .tagGreen {
+            background-color: var(--forest-green-dark);
+        }
+
+        .tagOrange {
+            background-color: var(--orange-dark);
+        }
+
+        .tag {
+            display: flex;
+            padding: 4px 16px;
+            align-items: flex-start;
+            gap: 8px;
+            border-radius: 900px;
+        }
+
+        .heart2ButtonLike {
+            display: inline-flex;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .heart2Black {
+            display: block;
+        }
+
+        .heart2White {
+            display: none;
+        }
+
+        .heart2ButtonLike:hover {
+            background-color: var(--heart-red);
+        }
+
+        .heart2ButtonLike:hover .heart2Black{
+            display: none;
+        }
+
+        .heart2ButtonLike:hover .heart2White{
+            display: block;
+        }
+
+        .heart2ButtonDeslike {
+            display: none;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .heart3ButtonLike {
+            display: inline-flex;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .heart3Black {
+            display: block;
+        }
+
+        .heart3White {
+            display: none;
+        }
+
+        .heart3ButtonLike:hover {
+            background-color: var(--heart-red);
+        }
+
+        .heart3ButtonLike:hover .heart3Black{
+            display: none;
+        }
+
+        .heart3ButtonLike:hover .heart3White{
+            display: block;
+        }
+
+        .heart3ButtonDeslike {
+            display: none;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .heart4ButtonLike {
+            display: inline-flex;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .heart4Black {
+            display: block;
+        }
+
+        .heart4White {
+            display: none;
+        }
+
+        .heart4ButtonLike:hover {
+            background-color: var(--heart-red);
+        }
+
+        .heart4ButtonLike:hover .heart4Black{
+            display: none;
+        }
+
+        .heart4ButtonLike:hover .heart4White{
+            display: block;
+        }
+
+        .heart4ButtonDeslike {
+            display: none;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .heart5ButtonLike {
+            display: inline-flex;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        .heart5Black {
+            display: block;
+        }
+
+        .heart5White {
+            display: none;
+        }
+
+        .heart5ButtonLike:hover {
+            background-color: var(--heart-red);
+        }
+
+        .heart5ButtonLike:hover .heart5Black{
+            display: none;
+        }
+
+        .heart5ButtonLike:hover .heart5White{
+            display: block;
+        }
+
+        .heart5ButtonDeslike {
+            display: none;
+            border-radius: 900px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            border: none;
+            background-color: var(--white);
+            cursor: pointer;
+        }
+
+        footer {
+            display: flex;
+            padding: 40px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 1000px;
+            box-sizing: border-box;
+            margin: 24px 0px 40px 0px;
+            background-color: var(--light-grey);
+        }
+
+        .footerText {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .onlyMobile {
+            display: none;
+        }
+
+        /* ### Responsivo */
+
+        @media only screen and (max-width: 1000px) {
+
+            body {
+                padding: 0px 24px;
+                width: 100vw;
+                box-sizing: border-box;
+            }
+
+            .titleContainer {
+                width: auto;
+                height: auto;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            .caseInfos {
+                flex-direction: column;
+            }
+            
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .contactContainer {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .imgMobile {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--Título-->
+    <div class="titlePage" aria-label="Oi, eu sou o Vinicius Trevisanuto. Boas vindas ao meu portfólio">
+        <img alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668dbf5f9706c728e0844426_icon_trevisa.svg">
+        <p aria-hidden="true" class="body1 postiveFont">VINICIUS TREVISANUTO</p>
+    </div>
+    <!--Header-->
+    <header>
+        <div class="titleContainer">
+            <h1 class="fontPositive">Oi, eu sou o Vini</h1>
+            <p class="body1 fontPositive">Product designer focado em UX e desenvolvimento front-end web com 5 anos de experiência.</p>
+            <p style="height: 100%;" class="body1 fontPositive">Busco utilizar meu conhecimento para causar impactos positivos, criando experiências acessíveis, centradas no usuário e encantadoras.</p>
+            <div class="contactContainer">
+                <button onclick="location.href='mailto:vtrevisanuto@gmail.com'" class="primaryButton"><img alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de543a4a6d6cc20ec37e4_icon_mail.svg"><p class="body1 negativeFont">Entrar em contato</p></button>
+                <button onclick="location.href='https://www.linkedin.com/in/vinicius-trevisanuto-01a4ba186'" class="linkedinButton"><img class="linkedinBlack" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de74be02dca0b1164933e_linkedin_black.svg"><img class="linkedinWhite" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de74b7738f34100c78400_linkedin_white.svg"></button>
+                <button onclick="location.href='https://www.instagram.com/buonanuto?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='" class="instagramButton"><img class="instagramBlack" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de74b5c2c837b4b7225a1_instagram_black.svg"><img class="instagramWhite" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de74be2e01cba33a15e1b_instagram_white.svg"></button>
+            </div>
+        </div>
+        <div alt="Aqui temos uma foto minha, sou um homem cor cabelo preto, pele clara, olhos castanhos escuros. Na foto estou utilizando um terno cinza claro, camiseta branca e brincos pretos" class="photoContainer"></div>
+    </header>
+    <!--Case 1-->
+    <div class="caseContainer casePurple">
+        <div class="caseTitleContainer">
+            <div class="caseTitleText">
+                <h2 class="fontPositive">Desenvolvimento de gráficos acessíveis</h2>
+                <p class="body2 fontPositive">Como podemos ajudar pessoas daltônicas, cegas ou com baixa visão a interpretar gráficos</p>
+            </div>
+            <button id="heart1Default" onclick=likeCase1() class="heart1ButtonLike"><img class="heart1Black" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def5298216238cf79afb0_heart_black.svg"><img class="heart1White" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52cb96e41c161f4034_heart_white.svg"></button>
+            <button id="heart1Liked" onclick=deslikeCase1() class="heart1ButtonDeslike"><img class="heart1Red" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52f55408a8b7a778d4_heart_red.svg"></button>
+        </div>
+        <div class="caseInfos">
+            <div class="caseText">
+                <p style="height: 100%;" class="body2 positiveFont">A construção de um gráfico tem muitos desafios, pela alto nível de carga cognitiva e interpretação. Nosso desafio foi ajudar pessoas com daltonismo, baixa visão ou cegueira a compreender os dados apresentados por meio de controle de contraste, otimização para leitura de tela, uso de texturas e padrões documentados via mapa de acessibilidade.<br><br>Atuei no projeto auxiliando outros UXers no design dos gráficos e tive o papel de desenvolver os gráficos em HTML, CSS e Javascript para serem utilizados em testes de usabilidade com pessoas se enquadravam no perfil.</p>
+                <div class="tagsContainer">
+                    <p class="body1 positiveFont">Destaques</p>
+                    <div class="tagsSection">
+                        <div class="tag tagPurple"><p class="caption1 negativeFont">Acessibilidade</p></div>
+                        <div class="tag tagPurple"><p class="caption1 negativeFont">Figma</p></div>
+                        <div class="tag tagPurple"><p class="caption1 negativeFont">Desenvolvimento front-end</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="caseImage">
+                <img class="imgMobile" height=400px alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668df959e32c65d1d3f5e628_case1.png">
+            </div>
+        </div>
+    </div>
+    <!--Case 2-->
+    <div class="caseContainer caseRed">
+        <div class="caseTitleContainer">
+            <div class="caseTitleText">
+                <h2 class="fontPositive">Descoberta de jornadas para pessoas com TEA</h2>
+                <p class="body2 fontPositive">Como podemos deixar nossas jornadas acessíveis para pessoas com transtorno do espectro autista?</p>
+            </div>
+            <button id="heart2Default" onclick=likeCase2() class="heart2ButtonLike"><img class="heart2Black" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def5298216238cf79afb0_heart_black.svg"><img class="heart2White" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52cb96e41c161f4034_heart_white.svg"></button>
+            <button id="heart2Liked" onclick=deslikeCase2() class="heart2ButtonDeslike"><img class="heart2Red" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52f55408a8b7a778d4_heart_red.svg"></button>
+        </div>
+        <div class="caseInfos">
+            <div class="caseText">
+                <p style="height: 100%;" class="body2 positiveFont">Após aprofundar meus estudos no tema, utilizando como base a <a class="body2Link" href="https://gaia.wiki.br">documentação GAIA</a> e os <a class="body2Link" href="https://www.iidc.indiana.edu/irca/articles/characteristics-of-individuals-with-an-asd.html">dados da Universidade de Indiana Bloomington</a>, dividi o conhecimento com a equipe de UX apresentando personas com TEA e discutindo quais recomendações de acessibilidade web poderiam auxiliar a jornada digital da persona selecionada.</p>
+                <div class="tagsContainer">
+                    <p class="body1 positiveFont">Destaques</p>
+                    <div class="tagsSection">
+                        <div class="tag tagRed"><p class="caption1 negativeFont">Acessibilidade</p></div>
+                        <div class="tag tagRed"><p class="caption1 negativeFont">Pesquisa</p></div>
+                        <div class="tag tagRed"><p class="caption1 negativeFont">Dinâmica</p></div>
+                        <div class="tag tagRed"><p class="caption1 negativeFont">Discovery</p></div>
+                        <div class="tag tagRed"><p class="caption1 negativeFont">Figjam</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="caseImage">
+                <img class="imgMobile" height=400px alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668dfb845c2c837b4b7e6a2f_case2.png">
+            </div>
+        </div>
+    </div>
+    <!--Case 3-->
+    <div class="caseContainer caseBlue">
+        <div class="caseTitleContainer">
+            <div class="caseTitleText">
+                <h2 class="fontPositive">Biblioteca design system em HTML</h2>
+                <p class="body2 fontPositive">Desenvolvimento da biblioteca para o site institucional</p>
+            </div>
+            <button id="heart3Default" onclick=likeCase3() class="heart3ButtonLike"><img class="heart3Black" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def5298216238cf79afb0_heart_black.svg"><img class="heart3White" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52cb96e41c161f4034_heart_white.svg"></button>
+            <button id="heart3Liked" onclick=deslikeCase3() class="heart3ButtonDeslike"><img class="heart3Red" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52f55408a8b7a778d4_heart_red.svg"></button>
+        </div>
+        <div class="caseInfos">
+            <div class="caseText">
+                <p style="height: 100%;" class="body2 positiveFont">Projeto desenvolvido no Banco ABC Brasil, realizado em conjunto com a equipe de design system para disponibilizarmos os componentes do design system tokenizados e desenvolvidos em HTLM, CSS e javascript.<br><br>Além de desenvolver os componentes e tokens na plataforma Umbraco, utilizei como designer a biblioteca no desenvolvimento das páginas no novo site institucional do ABC Brasil.</p>
+                <div class="tagsContainer">
+                    <p class="body1 positiveFont">Destaques</p>
+                    <div class="tagsSection">
+                        <div class="tag tagBlue"><p class="caption1 negativeFont">Desenvolvimento front-end</p></div>
+                        <div class="tag tagBlue"><p class="caption1 negativeFont">Design System</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="caseImage">
+                <img class="imgMobile" height=320px alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668e0242a4a6d6cc20ffabaa_case3.png">
+            </div>
+        </div>
+    </div>
+    <!--Case 4-->
+    <div class="caseContainer caseGreen">
+        <div class="caseTitleContainer">
+            <div class="caseTitleText">
+                <h2 class="fontPositive">Jornada de favoritos Pix</h2>
+                <p class="body2 fontPositive">Análise de mercado via benchmark, mapeamento da jornada e desenho da experiência do Pix.</p>
+            </div>
+            <button id="heart4Default" onclick=likeCase4() class="heart4ButtonLike"><img class="heart4Black" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def5298216238cf79afb0_heart_black.svg"><img class="heart4White" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52cb96e41c161f4034_heart_white.svg"></button>
+            <button id="heart4Liked" onclick=deslikeCase4() class="heart4ButtonDeslike"><img class="heart4Red" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52f55408a8b7a778d4_heart_red.svg"></button>
+        </div>
+        <div class="caseInfos">
+            <div class="caseText">
+                <p style="height: 100%;" class="body2 positiveFont">Projeto desenvolvido no Banco ABC Brasil, desenvolvendo a jornada e experiência da jornada de favoritos do produto Pix no aplicativo para pessoa física e internet banking para pessoa jurídica me baseando em diretrizes regulatórias, benchmark de mercado e design system interno.</p>
+                <div class="tagsContainer">
+                    <p class="body1 positiveFont">Destaques</p>
+                    <div class="tagsSection">
+                        <div class="tag tagGreen"><p class="caption1 negativeFont">Figma</p></div>
+                        <div class="tag tagGreen"><p class="caption1 negativeFont">Design System</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="caseImage">
+                <img class="imgMobile" height=320px alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668e04f69714cd24bc502892_case4.png">
+            </div>
+        </div>
+    </div>
+    <!--Case 5-->
+    <div class="caseContainer caseOrange">
+        <div class="caseTitleContainer">
+            <div class="caseTitleText">
+                <h2 class="fontPositive">UX Metrics</h2>
+                <p class="body2 fontPositive">Como podemos metrificar experiência e traduzir em melhorias.</p>
+            </div>
+            <button id="heart5Default" onclick=likeCase5() class="heart5ButtonLike"><img class="heart5Black" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def5298216238cf79afb0_heart_black.svg"><img class="heart5White" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52cb96e41c161f4034_heart_white.svg"></button>
+            <button id="heart5Liked" onclick=deslikeCase5() class="heart5ButtonDeslike"><img class="heart5Red" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668def52f55408a8b7a778d4_heart_red.svg"></button>
+        </div>
+        <div class="caseInfos">
+            <div class="caseText">
+                <p style="height: 100%;" class="body2 positiveFont">Projeto desenvolvido no Banco ABC Brasil, mapeando métricas de experiência do usuário da jornada do sistema interno Plataforma de crédito, entregando indicadores de comportamentos que foram usados para melhorar experiência e jornada.</p>
+                <div class="tagsContainer">
+                    <p class="body1 positiveFont">Destaques</p>
+                    <div class="tagsSection">
+                        <div class="tag tagOrange"><p class="caption1 negativeFont">Análise de dados</p></div>
+                        <div class="tag tagOrange"><p class="caption1 negativeFont">Mapa de tagueamento</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="caseImage">
+                <img class="imgMobile" width=100% alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668e0626f939a745ae3f8adb_case5.png">
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer>
+        <div class="footerText">
+            <h3>Meus contatos</h3>
+            <p class="body2 positiveFont">Sinta-se a vontade para entrar em contato comigo pelo seguintes canais:</p>
+        </div>
+        <div class="contactContainer">
+            <button onclick="location.href='mailto:vtrevisanuto@gmail.com'" class="primaryButton"><img alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de543a4a6d6cc20ec37e4_icon_mail.svg"><p class="body1 negativeFont">Entrar em contato</p></button>
+            <button onclick="location.href='https://www.linkedin.com/in/vinicius-trevisanuto-01a4ba186'" class="linkedinButton"><img class="linkedinBlack" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de74be02dca0b1164933e_linkedin_black.svg"><img class="linkedinWhite" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de74b7738f34100c78400_linkedin_white.svg"></button>
+            <button onclick="location.href='https://www.instagram.com/buonanuto?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='" class="instagramButton"><img class="instagramBlack" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de74b5c2c837b4b7225a1_instagram_black.svg"><img class="instagramWhite" alt="" src="https://uploads-ssl.webflow.com/668dbe21083eedddc78c0218/668de74be2e01cba33a15e1b_instagram_white.svg"></button>
+        </div>
+    </footer>
+    
+    
+<script>
+    function likeCase1() {
+        document.getElementById("heart1Default").style.display = "none";
+        document.getElementById("heart1Liked").style.display = "inline-flex";
+    }
+
+    function deslikeCase1() {
+        document.getElementById("heart1Default").style.display = "inline-flex";
+        document.getElementById("heart1Liked").style.display = "none";
+    }
+
+    function likeCase2() {
+        document.getElementById("heart2Default").style.display = "none";
+        document.getElementById("heart2Liked").style.display = "inline-flex";
+    }
+
+    function deslikeCase2() {
+        document.getElementById("heart2Default").style.display = "inline-flex";
+        document.getElementById("heart2Liked").style.display = "none";
+    }
+
+    function likeCase3() {
+        document.getElementById("heart3Default").style.display = "none";
+        document.getElementById("heart3Liked").style.display = "inline-flex";
+    }
+
+    function deslikeCase3() {
+        document.getElementById("heart3Default").style.display = "inline-flex";
+        document.getElementById("heart3Liked").style.display = "none";
+    }
+
+    function likeCase4() {
+        document.getElementById("heart4Default").style.display = "none";
+        document.getElementById("heart4Liked").style.display = "inline-flex";
+    }
+
+    function deslikeCase4() {
+        document.getElementById("heart4Default").style.display = "inline-flex";
+        document.getElementById("heart4Liked").style.display = "none";
+    }
+
+    function likeCase5() {
+        document.getElementById("heart5Default").style.display = "none";
+        document.getElementById("heart5Liked").style.display = "inline-flex";
+    }
+
+    function deslikeCase5() {
+        document.getElementById("heart5Default").style.display = "inline-flex";
+        document.getElementById("heart5Liked").style.display = "none";
+    }
+</script>
+
+
+<!--<script src="file:///Users/viniciust/Desktop/Portfolio/app.js"></script>-->
+<!--Tradutor de libras-->
+<div aria-hidden="true" vw class="enabled">
+    <div aria-hidden="true" vw-access-button class="active"></div>
+    <div aria-hidden="true" vw-plugin-wrapper>
+      <div aria-hidden="true" class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+</body>
+
+</html>
